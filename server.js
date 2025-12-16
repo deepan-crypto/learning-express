@@ -1,10 +1,21 @@
+const app = require("./index");
 const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+
 dotenv.config({ path: "./config.env" });
 
-const app = require("./index.js");
+console.log(process.env);
 
-const PORT = process.env.PORT_NO || 3000;
+console.log(process.env.DB_URL);
+mongoose
+  .connect(process.env.DB_URL)
+  .then(() => {
+    console.log("DB COnnected Successfully");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
-app.listen(PORT, () => {
-    console.log(`Server started successfully on port ${PORT}`);
+app.listen(process.env.PORT_NO, () => {
+  console.log("server started on port", process.env.PORT_NO);
 });
