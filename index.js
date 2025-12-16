@@ -25,6 +25,42 @@ app.get("/api/v3/sri/:id",(req,res)=>{
     });
 });
 
+
+
+app.post("/api/v3/sri", (req, res) => {
+    const id=jsonData.length;
+    const plant=Object.assign({id:id},req.body);
+    jsonData.push(plant);
+    fs.writeFileSync("./plant.json",JSON.stringify(jsonData),"utf-8",(err)=>{
+        if(err){
+
+            res.status(400).json({
+                status:"Failed to writ"
+
+            });
+        }
+        res.status(201).json({
+
+            status:"True",
+            data:{
+                plant,
+            }
+        });
+    });
+    res.status(201).json({
+        status:"Successful",
+        data:{
+            plant,
+        }
+    });
+});
+
+
+
+
+
+
+
 const port=3000;
 app.listen(port,()=>{
     console.log(`App running on port ${port}...`);
