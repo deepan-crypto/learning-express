@@ -18,6 +18,8 @@ app.use((req,res,next)=>{
 );
 
 app.use(express.json());
+
+
 app.get("/api/v3/sri",(req, res)=>{
     res.status(200).json({
         status:"Success",
@@ -42,7 +44,7 @@ app.get("/api/v3/sri/:id",(req,res)=>{
 
 app.post("/api/v3/sri", (req, res) => {
     const id=jsonData.length;
-    const plant=Object.assign({id:id},req.body);
+    const plant=Object.assign(req.body);
     jsonData.push(plant);
     fs.writeFileSync("./plant.json",JSON.stringify(jsonData),"utf-8",(err)=>{
         if(err){
