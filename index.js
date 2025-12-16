@@ -5,6 +5,19 @@ const fs=require("fs");
 const jsonData=JSON.parse(fs.readFileSync("./plant.json","utf-8"));
 console.log(jsonData);
 
+app.use((req,res,next)=>{
+    const now=new Date();
+      req.requestTimeofHit=now.toLocaleString();
+      next();
+}
+);
+app.use((req,res,next)=>{
+    console.log("Hello");
+    next();
+}
+);
+
+app.use(express.json());
 app.get("/api/v3/sri",(req, res)=>{
     res.status(200).json({
         status:"Success",
