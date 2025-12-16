@@ -58,6 +58,27 @@ app.post("/api/v3/sri", (req, res) => {
 
 
 
+app.put("/api/v3/sri/:id", (req, res) => {
+    const resId=req.params.id;
+    const restaurant=jsonData.find((el)=>el.id==resId);
+    if(!plant){
+        res.status(404).json({
+            status:"Fail",
+            message:"Please check your entry id",
+        });
+    }
+                res.status(204).json({
+                    status:"Successful",
+                    message:"<> Update Successful <>",
+                });
+                
+});
+
+
+
+
+
+
 
 
 
