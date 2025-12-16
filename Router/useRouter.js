@@ -5,12 +5,12 @@ const router = express.Router();
 
 router
     .route("/")
-    .get(PlantController.getAllPlants)
-    .post(PlantController.createPlant);
+    .get(userController.getAllPlants)
+    .post(userController.createPlant);
 
 router
     .route("/:id")
-    .get(PlantController.getPlantById)
-    .put(PlantController.updatePlant);
+    .get(userController.getPlantById)
+    .put(userController.updatePlant);
 
 module.exports = router;

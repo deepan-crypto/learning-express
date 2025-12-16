@@ -107,7 +107,7 @@
 const express = require("express");
 const app = express();
 
-const plantRoutes = require("./Routes/PlantRoutes");
+const plantRoutes = require("./Router/userRouter");
 
 app.use(express.json());
 
