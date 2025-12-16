@@ -82,7 +82,7 @@ app.put("/api/v3/sri/:id", (req, res) => {
 
 
 
-const port=3000;
-app.listen(port,()=>{
-    console.log(`App running on port ${port}...`);
-}); 
+const PORT_NO=9000;
+app.listen(PORT_NO,()=>{
+    console.log("Server started successfully",PORT_NO);
+})
