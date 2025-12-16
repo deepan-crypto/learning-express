@@ -125,3 +125,4 @@ app.use((req, res, next) => {
 app.use("/api/v3/sri", plantRoutes);
 
 
+module.exports = app;

@@ -1,16 +1,15 @@
 {
   "name": "sri",
   "version": "1.0.0",
-  "description": "sri",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "nodemon server.js"
+    "start": "nodemon server.js"
   },
-  "author": "deepan",
-  "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1",
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.11"
   }
 }
