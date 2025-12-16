@@ -1,5 +1,5 @@
 const express = require("express");
-const PlantController = require("../Controller/PlantController");
+const PlantController = require("../Controller/userController");
 
 const router = express.Router();
 
