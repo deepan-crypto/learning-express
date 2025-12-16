@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Aloe Vera",
+    "type": "Succulent",
+    "waterFrequency": "Twice a week",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 2,
+    "name": "Money Plant",
+    "type": "Indoor",
+    "waterFrequency": "Once a week",
+    "sunlight": "Low to medium sunlight"
+  }
+]
