@@ -19,8 +19,9 @@ app.use((req,res,next)=>{
 
 app.use(express.json());
 
+//Controllers
 
-app.get("/api/v3/sri",(req, res)=>{
+const getAllPlants=(req,res)=>{
     res.status(200).json({
         status:"Success",
         length : jsonData.length,
@@ -28,8 +29,12 @@ app.get("/api/v3/sri",(req, res)=>{
             jsonData,
         }
     });
-});
-app.get("/api/v3/sri/:id",(req,res)=>{
+}
+
+
+
+
+const getPlantById=(req,res)=>{
     const id=req.params.id*1;
     const plant=jsonData.find(el=>el.id===id);
     res.status(200).json({
@@ -38,7 +43,16 @@ app.get("/api/v3/sri/:id",(req,res)=>{
             plant,
         }
     });
-});
+}
+
+
+
+
+
+app.get("/api/v3/sri",getAllPlants);
+
+
+app.get("/api/v3/sri/:id",getPlantById);
 
 
 
