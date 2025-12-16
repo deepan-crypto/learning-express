@@ -1,3 +1,6 @@
+const Plant=require("./../Models/plantModels");
+
+
 const fs = require("fs");
 
 const jsonData = JSON.parse(
