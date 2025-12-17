@@ -108,7 +108,7 @@ const express = require("express");
 const app = express();
 
 const plantRoutes = require("./Router/userRouter");
-
+const authRoutes = require("./Router/authRoutes");
 app.use(express.json());
 
 app.use((req, res, next) => {
