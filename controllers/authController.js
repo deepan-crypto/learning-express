@@ -71,6 +71,15 @@ res.status(200).json({
 
 exports.signup=(req,res)=>{
     const {name,email,password,confirmPassword,role}=req.body;
+    // check user already exists 
+
+    const existingUser=users.find(user=>user.email===email);
+    if(existingUser){
+        return res.status(400).json({
+            status:"Fail",
+            message:"User already exists",
+        });
+    }
     
     if(password !== confirmPassword){
         return res.status(400).json({
