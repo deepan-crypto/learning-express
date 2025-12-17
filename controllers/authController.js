@@ -33,16 +33,21 @@ exports.allUsers=(req,res)=>{
 };
 
 exports.login=(req,res)=>{
+    // 1 .we need email and password
     const {email,password}=req.body;
-    const user=users.find(user=>user.email===email && user.password===password);
+
     
-    if(!user){
+// 2.check input
+    if(!email || !password){
         return res.status(401).json({
             status:"Fail",
             message:"Invalid email or password",
         });
     }
-    
+  
+    // 2 .check inputs
+   const user=users.find(user=>user.email===email && user.password===password);
+    if(!user){                 
     res.status(200).json({
         status:"Success",
         data:{
@@ -50,6 +55,18 @@ exports.login=(req,res)=>{
         },
     });
 };
+}
+const token=signToken(user.id);
+
+res.status(200).json({
+    status:"Success",
+    token,
+    data:{
+        email:user.email,
+        role:user.role,
+        name:user.name,
+    },
+});
 
 
 exports.signup=(req,res)=>{
